@@ -13,9 +13,10 @@ const{Cart}=require('./model/Cart');
 //middleware
 app.use(cors());
 app.use(morgan('dev'));
-app.use(express.json());
+app.use(express.json())
 
-mongoose.connect('mongodb://127.0.0.1:27017/commerece12')
+let MONGODB_URL='mongodb+srv://katewalshreya:W2Kf092GWBUlJUIE@cluster0.z4mrzvt.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect( MONGODB_URL)
 .then(()=>{
     console.log('db connected');
 }).catch((err)=>{
